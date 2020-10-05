@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* Add application styles & imports to this file! */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.top{
+  display: grid;
+  grid-template-columns: auto auto;
+  place-content: center space-between;
+}

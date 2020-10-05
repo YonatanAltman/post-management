@@ -1,0 +1,13 @@
+<div class="post">
+	<div class="title">
+		{{data.title}}
+	</div>
+	<div class="body">
+		{{data.body}}
+	</div>
+</div>
+<div class="action">
+
+	<button mat-button (click)="onClick()">{{btn.next}}</button>
+	<button mat-button (click)="onClick(true)">{{btn.stop}}</button>
+</div>

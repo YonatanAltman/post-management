@@ -1,0 +1,50 @@
+
+$color:rgba(16, 0, 54, 0.829);
+:host{
+div{
+  font-family: Heebo;
+}
+h2{
+  font-family: Heebo;
+  font-size: x-large; 
+  
+  span{
+  font-size: large;
+  color:rgba(0, 0, 0, 0.356);
+  }
+}}
+
+  .post{
+    padding: 5px;
+    -webkit-box-shadow: 0px 1px 6px 1px darkblue;
+    -moz-box-shadow: 0px 1px 6px 1px darkblue;
+    box-shadow: 0px 1px 6px 1px darkblue;
+    display: grid;
+    border-radius: 10px;
+    row-gap: 10px;
+  .title{
+    color:$color; 
+    font-weight: 400;
+    font-size: 15px;
+
+  }
+  .body{
+
+    font-size: 12px;
+  }
+
+  }
+  .action{
+    margin: 10px;
+display: grid;
+place-content: center space-between;
+grid-template-columns: auto auto;
+button{
+  border-radius: 100px;
+  border: solid 1px darkblue;
+  color: darkblue;
+  font-weight: bold;
+  // height: 30px;
+  width: 60px;
+}
+  }

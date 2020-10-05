@@ -1,0 +1,22 @@
+<div class="top">
+<h2>
+	{{title.title|titlecase}} <span>{{title.refresh}} {{timer}} sec</span>
+</h2>
+<a routerLink="/dialog">go to dialog</a>
+
+</div>
+<div class="wrapper">
+
+	<div class="user" *ngFor="let user of list$ |async">
+		<div class="title">
+			{{user.name}}
+		</div>
+		<div class="posts">
+
+			<div class="post" *ngFor="let post of user.posts">
+				<div class="title">{{post.title}}</div>
+				<div class="body">{{post.body}}</div>
+			</div> 
+		</div>
+	</div>
+</div>
