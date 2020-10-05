@@ -1,0 +1,10 @@
+<div class="top">
+  <h2>
+    {{title|titlecase}}
+  </h2>
+  <div class="links">
+
+    <a [routerLink]="'/'+l" *ngFor="let l of links">go to {{l}}</a>
+  </div>
+
+</div>

@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@ya/common": [
+        "projects/common/src/public_api"
+      ],
+      "common/*": [
+        "dist/common/*"
+      ]
+    }
   }
 }

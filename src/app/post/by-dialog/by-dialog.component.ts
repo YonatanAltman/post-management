@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy,  OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import {
   MatDialog,
   MatDialogRef,
@@ -14,12 +14,12 @@ import { IPost } from "../post.model";
   templateUrl: "./by-dialog.component.html",
   styleUrls: ["./by-dialog.component.scss"]
 })
-export class ByDialogComponent implements OnInit,OnDestroy {
+export class ByDialogComponent implements OnInit, OnDestroy {
   stop$ = new Subject();
   title = {
-    title: "posts"
+    title: 'dialog'
   };
-  constructor(private app: AppService, private dialog: MatDialog) {}
+  constructor(private app: AppService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.getAllPost();
@@ -29,20 +29,20 @@ export class ByDialogComponent implements OnInit,OnDestroy {
   getAllPost() {
     const url = "posts";
     this.app.get(url).subscribe((posts: IPost[]) => {
- 
+
       concat(posts)
         .pipe(
           concatMap(d => this.createDialog(d).pipe())
-          )
+        )
         .pipe(
-          
+
           takeUntil(this.stop$)
-        ).subscribe(stop=>{
-          if(stop){
+        ).subscribe(stop => {
+          if (stop) {
             this.stop$.next();
           }
         });
-        ;
+      ;
     });
   }
   createDialog(data: IPost) {
@@ -53,7 +53,7 @@ export class ByDialogComponent implements OnInit,OnDestroy {
 
     return dialogRef.afterClosed();
   }
-    ngOnDestroy(): void {
+  ngOnDestroy(): void {
     this.stop$.next();
   }
 }
@@ -71,10 +71,10 @@ export class PostDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<PostDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: IPost
-  ) {}
+  ) { }
 
-  ngOnInit() {}
-  onClick(stop?:boolean) {
+  ngOnInit() { }
+  onClick(stop?: boolean) {
     this.dialogRef.close(stop);
   }
 }

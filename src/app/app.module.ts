@@ -9,13 +9,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/material/material.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from '@ya/common';
 
 @NgModule({
   imports: [BrowserAnimationsModule, CommonModule, BrowserModule, FormsModule, MaterialModule, HttpClientModule, PostModule, RouterModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [AppService],
+  providers: [AppService]
 
-})
+}
+
+
+)
 export class AppModule { }
