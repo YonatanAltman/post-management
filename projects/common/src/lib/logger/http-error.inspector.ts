@@ -46,6 +46,3 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     }
 }
 
-export class ErrorHandler implements Error{
-
-}
